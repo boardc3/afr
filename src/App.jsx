@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import logo from '../AFR-Benefits---PNG.png'
+import logo from './afr-benefits-logo.png'
 
 const ShieldIcon = (props) => (
   <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -43,15 +43,15 @@ const ArrowIcon = (props) => (
 const benefits = [
   {
     Icon: HeartIcon,
-    eyebrow: '01 — Access to Care',
-    title: 'A clinician on call, day or night',
+    eyebrow: '01 — Virtual Primary Care',
+    title: 'Virtual primary care, day or night',
     description:
-      '24/7 access to medical professionals for everyday needs, with the flexibility to call anytime or schedule follow-ups when needed.',
+      '24/7 access to virtual primary care for everyday needs, with the flexibility to call anytime or schedule follow-ups when needed.',
     items: [
       'Call anytime, day or night',
       'No copays for urgent care or scheduled visits',
       'Ability to follow up with the same provider',
-      'Functions like a virtual primary care option',
+      'A true virtual primary care service',
       'Covers members and their families, up to 7',
     ],
   },
@@ -65,7 +65,6 @@ const benefits = [
       'Works at national and local pharmacies',
       'Easy-to-use mobile app',
       'Immediate savings at the counter',
-      'Covers members and their families, up to 7',
     ],
   },
   {
@@ -86,7 +85,7 @@ const benefits = [
 const proofStats = [
   { value: '24/7', label: 'Access to care' },
   { value: '0', label: 'Urgent care copays' },
-  { value: '7', label: 'Covered family members' },
+  { value: '7', label: 'Covered with virtual primary care' },
 ]
 
 const supportPillars = [
@@ -196,8 +195,9 @@ function App() {
                 <em>community.</em>
               </h1>
               <p className="lede" data-reveal>
-                AFR Benefits gives departments a meaningful way to take care of their members and
-                their families &mdash; with practical, everyday benefits they can actually use.
+                AFR Benefits, powered by Exectras, gives departments a meaningful way to take care
+                of their members and their families &mdash; with practical, everyday benefits they
+                can actually use.
               </p>
 
               <div className="hero-actions" data-reveal>
@@ -326,8 +326,9 @@ function App() {
             <div className="benefit-callout" data-reveal>
               <FamilyIcon className="callout-icon" />
               <p>
-                <strong>Designed around families.</strong> Each benefit covers members and up to six
-                family members, so the support extends to the people who matter most.
+                <strong>Designed around families.</strong> Virtual primary care covers members and
+                their families &mdash; up to 7 in all &mdash; so the support extends to the people
+                who matter most.
               </p>
             </div>
           </div>
@@ -344,8 +345,8 @@ function App() {
             </div>
             <div className="section-body future-body" data-reveal>
               <p>
-                AFR Benefits is built to grow. Additional benefits, partnerships, and resources will
-                continue to be added.
+                AFR Benefits, powered by Exectras, is built to grow. Additional benefits,
+                partnerships, and resources will continue to be added.
               </p>
               <p className="future-teaser">
                 Future offerings may include cost-saving programs, department-focused services, and
@@ -392,11 +393,11 @@ function App() {
             <article className="credibility-card" data-reveal>
               <span className="section-tag light">
                 <span className="section-num">05</span>
-                Built by someone who knows
+                Offered by someone who knows
               </span>
               <blockquote>
-                Created by a fourth-generation firefighter with over 40 years in the volunteer fire
-                service and leadership at the state level.
+                Made available by a fourth-generation firefighter with over 40 years in the
+                volunteer fire service and leadership at the state level.
               </blockquote>
               <span className="credibility-meta">AFR Benefits Founder</span>
             </article>
