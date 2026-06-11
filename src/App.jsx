@@ -15,6 +15,13 @@ const HeartIcon = (props) => (
   </svg>
 )
 
+const MindIcon = (props) => (
+  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 5c6.6 0 11 4.1 11 9.4 0 5.3-4.4 9.4-11 9.4-1.1 0-2.2-.12-3.2-.36L7.4 26l1.4-4.3C6.5 20 5 17.4 5 14.4 5 9.1 9.4 5 16 5z" />
+    <path d="M16 18.4s-3.8-2.2-3.8-4.7a2.3 2.3 0 0 1 3.8-1.7 2.3 2.3 0 0 1 3.8 1.7c0 2.5-3.8 4.7-3.8 4.7z" />
+  </svg>
+)
+
 const PillIcon = (props) => (
   <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <rect x="4" y="11" width="24" height="10" rx="5" />
@@ -43,21 +50,42 @@ const ArrowIcon = (props) => (
 const benefits = [
   {
     Icon: HeartIcon,
-    eyebrow: '01 — Virtual Primary Care',
-    title: 'Virtual primary care, day or night',
+    eyebrow: '01 — Virtual Healthcare',
+    title: 'Virtual healthcare, day or night',
     description:
-      '24/7 access to virtual primary care for everyday needs, with the flexibility to call anytime or schedule follow-ups when needed.',
+      'Two ways to get care: Virtual Urgent Healthcare for right-now needs, and Virtual Primary Care for ongoing health.',
+    groups: [
+      {
+        heading: 'Virtual Urgent Healthcare',
+        items: ['24/7 Access', '$0 Copay', 'Available Anytime, Day or Night'],
+      },
+      {
+        heading: 'Virtual Primary Care',
+        items: [
+          'Scheduled Appointments',
+          'Follow-Up Care',
+          'Consistent Access to Care',
+          'Covers Members Plus Up to Six Household Family Members',
+        ],
+      },
+    ],
+  },
+  {
+    Icon: MindIcon,
+    eyebrow: '02 — Mental Health',
+    title: 'Virtual Mental Health Support',
+    description: 'Support when your members need someone to talk to.',
     items: [
-      'Call anytime, day or night',
-      'No copays for urgent care or scheduled visits',
-      'Ability to follow up with the same provider',
-      'A true virtual primary care service',
-      'Covers members and their families, up to 7',
+      'Free Peer-to-Peer Support',
+      'Licensed Clinicians for a $25 Copay',
+      'Unlimited Conversations',
+      'Confidential Virtual Access',
+      'Support for Stress, Anxiety, Grief, and Burnout',
     ],
   },
   {
     Icon: PillIcon,
-    eyebrow: '02 — Prescription Savings',
+    eyebrow: '03 — Prescription Savings',
     title: 'Real savings at the pharmacy counter',
     description:
       'Help members reduce medication costs at national and local pharmacies with an easy-to-use savings tool.',
@@ -69,7 +97,7 @@ const benefits = [
   },
   {
     Icon: ShieldIcon,
-    eyebrow: '03 — Life Insurance',
+    eyebrow: '04 — Life Insurance',
     title: 'Built-in protection for the family at home',
     description:
       'Simple coverage designed to support members\u2019 families if the unthinkable happens.',
@@ -83,9 +111,9 @@ const benefits = [
 ]
 
 const proofStats = [
-  { value: '24/7', label: 'Access to care' },
-  { value: '0', label: 'Urgent care copays' },
-  { value: '7', label: 'Covered with virtual primary care' },
+  { value: '24/7', label: 'Virtual urgent healthcare' },
+  { value: '$0', label: 'Urgent healthcare copay' },
+  { value: '7', label: 'Covered by virtual primary care' },
 ]
 
 const supportPillars = [
@@ -151,9 +179,9 @@ function App() {
     <div className="site-shell" ref={rootRef}>
       <div className="utility-bar">
         <div className="utility-inner">
-          <span className="utility-mark">AFR Benefits</span>
+          <span className="utility-mark">AFR Benefits powered by Exectras</span>
           <div className="utility-meta">
-            <a href="tel:+16786619966">678&middot;661&middot;9966</a>
+            <a href="tel:+14436660776">(443) 666-0776</a>
             <span aria-hidden="true">/</span>
             <a href="mailto:info@AFRBenefits.com">info@AFRBenefits.com</a>
           </div>
@@ -162,10 +190,11 @@ function App() {
 
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand" href="#home" aria-label="AFR Benefits home">
-            <img src={logo} alt="AFR Benefits logo" />
+          <a className="brand" href="#home" aria-label="AFR Benefits powered by Exectras home">
+            <img src={logo} alt="AFR Benefits powered by Exectras logo" />
             <span>
               AFR <strong>Benefits</strong>
+              <small>powered by Exectras</small>
             </span>
           </a>
 
@@ -195,9 +224,15 @@ function App() {
                 <em>community.</em>
               </h1>
               <p className="lede" data-reveal>
-                AFR Benefits, powered by Exectras, gives departments a meaningful way to take care
+                AFR Benefits powered by Exectras gives departments a meaningful way to take care
                 of their members and their families &mdash; with practical, everyday benefits they
                 can actually use.
+              </p>
+
+              <p className="lede hero-plan" data-reveal>
+                AFR Benefits powered by Exectras brings proven business-class benefits to volunteer
+                fire, EMS, rescue, and nonprofit organizations. The Preferred Plan includes all of
+                the benefits shown below.
               </p>
 
               <div className="hero-actions" data-reveal>
@@ -242,7 +277,7 @@ function App() {
           </div>
         </section>
 
-        <section className="trust" aria-label="Departments AFR Benefits supports">
+        <section className="trust" aria-label="Departments AFR Benefits powered by Exectras supports">
           <div className="trust-inner">
             <span className="trust-label">Built for the people who answer the call</span>
             <div className="trust-list">
@@ -309,16 +344,36 @@ function App() {
                   <span className="benefit-eyebrow">{benefit.eyebrow}</span>
                   <h3>{benefit.title}</h3>
                   <p>{benefit.description}</p>
-                  <ul>
-                    {benefit.items.map((item) => (
-                      <li key={item}>
-                        <span className="check" aria-hidden="true">
-                          <ShieldIcon />
-                        </span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {benefit.groups ? (
+                    <div className="benefit-groups">
+                      {benefit.groups.map((group) => (
+                        <div className="benefit-group" key={group.heading}>
+                          <h4>{group.heading}</h4>
+                          <ul>
+                            {group.items.map((item) => (
+                              <li key={item}>
+                                <span className="check" aria-hidden="true">
+                                  <ShieldIcon />
+                                </span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul>
+                      {benefit.items.map((item) => (
+                        <li key={item}>
+                          <span className="check" aria-hidden="true">
+                            <ShieldIcon />
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </article>
               ))}
             </div>
@@ -326,9 +381,9 @@ function App() {
             <div className="benefit-callout" data-reveal>
               <FamilyIcon className="callout-icon" />
               <p>
-                <strong>Designed around families.</strong> Virtual primary care covers members and
-                their families &mdash; up to 7 in all &mdash; so the support extends to the people
-                who matter most.
+                <strong>Designed around families.</strong> Virtual Primary Care covers members plus
+                up to six household family members &mdash; seven in all &mdash; so the support
+                extends to the people who matter most.
               </p>
             </div>
           </div>
@@ -345,7 +400,7 @@ function App() {
             </div>
             <div className="section-body future-body" data-reveal>
               <p>
-                AFR Benefits, powered by Exectras, is built to grow. Additional benefits,
+                AFR Benefits powered by Exectras is built to grow. Additional benefits,
                 partnerships, and resources will continue to be added.
               </p>
               <p className="future-teaser">
@@ -399,7 +454,7 @@ function App() {
                 Made available by a fourth-generation firefighter with over 40 years in the
                 volunteer fire service and leadership at the state level.
               </blockquote>
-              <span className="credibility-meta">AFR Benefits Founder</span>
+              <span className="credibility-meta">Founder, AFR Benefits powered by Exectras</span>
             </article>
           </div>
         </section>
@@ -499,7 +554,7 @@ function App() {
       <footer className="site-footer" id="contact">
         <div className="footer-inner">
           <div className="footer-brand">
-            <img src={logo} alt="AFR Benefits logo" />
+            <img src={logo} alt="AFR Benefits powered by Exectras logo" />
             <p>
               Practical benefits for members, families, and the departments that serve communities
               every day.
@@ -509,7 +564,7 @@ function App() {
           <div className="footer-col">
             <h4>Contact</h4>
             <a href="mailto:info@AFRBenefits.com">info@AFRBenefits.com</a>
-            <a href="tel:+16786619966">678&middot;661&middot;9966</a>
+            <a href="tel:+14436660776">(443) 666-0776</a>
           </div>
 
           <div className="footer-col">
@@ -530,7 +585,10 @@ function App() {
         </div>
 
         <div className="footer-base">
-          <span>&copy; {new Date().getFullYear()} AFR Benefits. All rights reserved.</span>
+          <span>
+            &copy; {new Date().getFullYear()} AFR Benefits powered by Exectras. All rights
+            reserved.
+          </span>
           <span>Protecting Those Who Protect Others.</span>
         </div>
       </footer>
