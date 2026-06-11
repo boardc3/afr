@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://afr-taupe.vercel.app/sitemap.xml
