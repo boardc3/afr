@@ -102,18 +102,18 @@ const benefits = [
     description:
       'Simple coverage designed to support members\u2019 families if the unthinkable happens.',
     items: [
-      'No medical exams required for eligible participants*',
-      'Simple enrollment',
-      'Designed to support their families',
-      '*Details reviewed during demo',
+      '$10,000 Life Insurance Benefit',
+      'No Medical Exam Required',
+      'Available for Qualified Members',
+      'Accelerated Benefit for Qualifying Conditions',
     ],
   },
 ]
 
 const proofStats = [
-  { value: '24/7', label: 'Virtual urgent healthcare' },
-  { value: '$0', label: 'Urgent healthcare copay' },
-  { value: '7', label: 'Covered by virtual primary care' },
+  { value: '24/7/365', label: 'Virtual Healthcare' },
+  { value: 'Up to 80%', label: 'Prescription Savings' },
+  { value: '$10K', label: 'Life Insurance' },
 ]
 
 const supportPillars = [
