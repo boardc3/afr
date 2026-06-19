@@ -331,6 +331,25 @@ h4 {
   font-size: 0.78rem;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.button-outline {
+  color: var(--ink);
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--line-strong);
+}
+
+.button-outline:hover {
+  color: var(--red-500);
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px rgba(230, 28, 37, 0.35);
+}
+
 .button-arrow {
   width: 1rem;
   height: 1rem;
@@ -1290,6 +1309,175 @@ h4 {
   letter-spacing: 0.02em;
 }
 
+/* -------- Enrollment page -------- */
+.enroll-page {
+  background: var(--bg);
+}
+
+.enroll-hero {
+  padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(1.5rem, 3vw, 2rem);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(230, 28, 37, 0.08), transparent 28rem),
+    var(--bg);
+}
+
+.enroll-hero h1 {
+  max-width: 20ch;
+  margin-top: 0.5rem;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+}
+
+.enroll-lede {
+  max-width: 760px;
+  margin-top: 1.1rem;
+  text-align: left;
+}
+
+.enroll-notice {
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--gutter);
+}
+
+.enroll-notice-card {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border: 1px solid rgba(230, 28, 37, 0.18);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(230, 28, 37, 0.06), rgba(255, 255, 255, 0)),
+    var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.enroll-notice-card h2 {
+  margin-bottom: 0.85rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+}
+
+.enroll-notice-card p {
+  margin-bottom: 0.95rem;
+  font-size: clamp(0.98rem, 1.2vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.enroll-notice-card p:last-of-type {
+  margin-bottom: 1.4rem;
+}
+
+.enroll-form-link {
+  background: var(--red-500);
+  box-shadow: 0 16px 36px rgba(230, 28, 37, 0.28);
+}
+
+.enroll-form-link:hover {
+  background: var(--red-600);
+  box-shadow: 0 20px 42px rgba(230, 28, 37, 0.32);
+}
+
+.enroll-guide {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+
+.enroll-step-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enroll-step,
+.enroll-final {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.enroll-final {
+  margin-top: 1rem;
+}
+
+.enroll-step-number {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--red-500);
+}
+
+.enroll-step h3,
+.enroll-final h3 {
+  margin-bottom: 0.85rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.enroll-step ul,
+.enroll-final ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enroll-step li,
+.enroll-final li {
+  position: relative;
+  padding-left: 1.15rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.enroll-step li::before,
+.enroll-final li::before {
+  position: absolute;
+  inset: 0.55rem auto auto 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--red-500);
+  content: '';
+}
+
+.enroll-bottom-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding: clamp(2rem, 4vw, 2.8rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--bg-soft);
+  text-align: center;
+}
+
+.enroll-bottom-cta p {
+  max-width: 520px;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.enroll-bottom-cta .link-button {
+  font-size: 0.82rem;
+}
+
 /* -------- Responsive -------- */
 @media (min-width: 640px) {
   .hero-strip {
@@ -1356,6 +1544,19 @@ h4 {
 
 @media (max-width: 600px) {
   .utility-meta span {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 0.4rem;
+  }
+
+  .header-actions .button-pill {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.68rem;
+  }
+
+  .header-actions .button-arrow {
     display: none;
   }
 

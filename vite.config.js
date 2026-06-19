@@ -4,4 +4,7 @@ const isGitHubPages = process.env.GITHUB_PAGES === 'true'
 
 export default defineConfig({
   base: isGitHubPages ? '/afr/' : '/',
+  esbuild: {
+    jsx: 'automatic',
+  },
 })
