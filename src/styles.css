@@ -1684,3 +1684,7 @@ h4 {
   color: var(--ink-mute);
   text-align: center;
 }
+
+.video-page {
+  max-width: 980px;
+}

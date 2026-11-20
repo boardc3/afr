@@ -24,3 +24,7 @@ export const normalizePath = () => {
 export const isEnrollPage = () => normalizePath() === '/enroll'
 
 export const isPrivacyPage = () => normalizePath() === '/privacy'
+
+export const VIDEO_SLUG = 'screening-7k2m9q4x'
+export const videoPath = () => `${base}/${VIDEO_SLUG}`
+export const isVideoPage = () => normalizePath() === `/${VIDEO_SLUG}`
