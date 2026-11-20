@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import logo from './afr-benefits-logo.png'
 import Layout from './components/Layout.jsx'
 import { ShieldIcon, HeartIcon, MindIcon, PillIcon, FamilyIcon, ArrowIcon } from './components/icons.jsx'
-import { enrollPath } from './lib/paths.js'
+import { enrollPath, privacyPath } from './lib/paths.js'
 
 const benefits = [
   {
@@ -469,6 +469,14 @@ function App() {
                   Request a Demo
                   <ArrowIcon className="button-arrow" />
                 </button>
+
+                <p className="form-consent">
+                  By submitting this form, you agree that AFR Benefits powered by Exectras may
+                  contact you by email or phone about your request. We don&rsquo;t send text
+                  marketing or sell your information. See our{' '}
+                  <a href={privacyPath()}>Privacy Policy</a>. Please don&rsquo;t include health or
+                  other sensitive personal information in your message.
+                </p>
               </form>
             </div>
           </section>

@@ -1,6 +1,6 @@
 import logo from '../afr-benefits-logo.png'
 import { ArrowIcon } from './icons.jsx'
-import { enrollPath, homeSection } from '../lib/paths.js'
+import { enrollPath, homeSection, privacyPath } from '../lib/paths.js'
 
 export default function SiteFooter() {
   return (
@@ -35,6 +35,7 @@ export default function SiteFooter() {
             <ArrowIcon className="button-arrow" />
           </a>
           <a href={homeSection('demo')}>Schedule a demo</a>
+          <a href={privacyPath()}>Privacy Policy</a>
         </div>
       </div>
 
@@ -45,6 +46,12 @@ export default function SiteFooter() {
         </span>
         <span>Protecting Those Who Protect Others.</span>
       </div>
+
+      <p className="footer-disclosure">
+        Video content on this site features AI-generated, dramatized characters and scenarios. They
+        are not real people or actual member testimonials. Benefits are provided through Exectras
+        and are subject to program terms, eligibility, and availability.
+      </p>
     </footer>
   )
 }

@@ -7,6 +7,8 @@ export const homePath = () => `${base}/` || '/'
 
 export const enrollPath = () => `${base}/enroll`
 
+export const privacyPath = () => `${base}/privacy`
+
 export const homeSection = (id) => `${homePath()}#${id}`
 
 export const normalizePath = () => {
@@ -18,3 +20,5 @@ export const normalizePath = () => {
 }
 
 export const isEnrollPage = () => normalizePath() === '/enroll'
+
+export const isPrivacyPage = () => normalizePath() === '/privacy'
