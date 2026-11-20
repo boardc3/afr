@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import logo from './afr-benefits-logo.png'
 import Layout from './components/Layout.jsx'
 import { ShieldIcon, HeartIcon, MindIcon, PillIcon, FamilyIcon, ArrowIcon } from './components/icons.jsx'
-import { enrollPath, privacyPath } from './lib/paths.js'
+import { enrollPath, privacyPath, LEAD_ENDPOINT } from './lib/paths.js'
 
 const benefits = [
   {
@@ -125,11 +125,42 @@ const useReveal = () => {
 
 function App() {
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const rootRef = useReveal()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    setSubmitted(true)
+    const form = event.currentTarget
+    const data = Object.fromEntries(new FormData(form).entries())
+    if (data._honey) return
+
+    setSending(true)
+    setError('')
+    try {
+      const response = await fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `AFR Benefits demo request: ${data.department || data.name}`,
+          _template: 'table',
+          _captcha: 'false',
+          ...data,
+        }),
+      })
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok || result.success === 'false' || result.success === false) {
+        throw new Error('send failed')
+      }
+      form.reset()
+      setSubmitted(true)
+    } catch {
+      setError(
+        'Sorry, we could not send your request. Please try again, or call (443) 666-0776 or email info@AFRBenefits.com.'
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -410,6 +441,21 @@ function App() {
                   </div>
                 )}
 
+                {error && (
+                  <div className="form-error" role="alert">
+                    {error}
+                  </div>
+                )}
+
+                <input
+                  name="_honey"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }}
+                />
+
                 <div className="form-grid">
                   <label>
                     <span>Name</span>
@@ -465,8 +511,8 @@ function App() {
                   <textarea name="message" rows="4" placeholder="Anything you want us to know" />
                 </label>
 
-                <button className="button form-submit" type="submit">
-                  Request a Demo
+                <button className="button form-submit" type="submit" disabled={sending}>
+                  {sending ? 'Sending\u2026' : 'Request a Demo'}
                   <ArrowIcon className="button-arrow" />
                 </button>
 

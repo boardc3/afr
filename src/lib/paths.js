@@ -1,3 +1,5 @@
+export const LEAD_ENDPOINT = 'https://formsubmit.co/ajax/info@AFRBenefits.com'
+
 export const ENROLLMENT_FORM_URL =
   'https://forms.exectras.com/exectras/form/MembershipSignupFormforPartnersNew/formperma/psgjb8QFaNh9eT1ljoboErMF6JzkQbikxN6k-Ttp594?prc=CAPA'
 

@@ -42,7 +42,8 @@ export default function PrivacyPage() {
           <p>
             We do not sell your personal information. We share it only with Exectras, the provider
             of the benefits program, and with service providers who help us run this site and
-            respond to requests, and when required by law.
+            respond to requests, and when required by law. Demo requests are delivered to us by email through
+            FormSubmit, a third-party form-delivery service.
           </p>
 
           <h2>Email and phone contact</h2>
