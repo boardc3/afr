@@ -242,6 +242,34 @@ function App() {
             </div>
           </section>
 
+          <section className="section video-feature" id="video">
+            <div className="section-inner">
+              <header className="section-head" data-reveal>
+                <span className="section-tag">
+                  <span className="section-num">&#9654;</span>
+                  Watch
+                </span>
+                <h2>
+                  Stories from the people who <em>answer the call.</em>
+                </h2>
+              </header>
+              <div className="video-frame" data-reveal>
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={`${import.meta.env.BASE_URL}afr-benefits-poster.jpg`}
+                >
+                  <source src={`${import.meta.env.BASE_URL}afr-benefits-compilation.mp4`} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p className="video-note">
+                Dramatized with AI-generated characters. Not actual member testimonials.
+              </p>
+            </div>
+          </section>
+
           <section className="section problem">
             <div className="section-inner two-col">
               <div className="section-side" data-reveal>

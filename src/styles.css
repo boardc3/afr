@@ -1659,3 +1659,28 @@ h4 {
   opacity: 0.65;
   cursor: wait;
 }
+
+/* -------- Video feature -------- */
+.video-feature .video-frame {
+  max-width: 980px;
+  margin: 2rem auto 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--navy-950);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-feature video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-note {
+  max-width: 980px;
+  margin: 0.9rem auto 0;
+  font-size: 0.8rem;
+  color: var(--ink-mute);
+  text-align: center;
+}
